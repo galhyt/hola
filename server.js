@@ -2,7 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
-
+var db = require('mongoskin').db('admin:6L8YHvCi86GC@127.12.75.1:27017/hola');
 
 /**
  *  Define the sample application.
@@ -107,6 +107,9 @@ var SampleApp = function() {
 
         self.routes['/'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
+            console.log('-------------------')
+            console.log(process.env)
+            db.test.insert({hi: "how"})
             res.send(self.cache_get('index.html') );
         };
     };

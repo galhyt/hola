@@ -1,0 +1,10 @@
+MongoDB 2.2 database added.  Please make note of these credentials:
+
+       Root User: admin
+   Root Password: 6L8YHvCi86GC
+   Database Name: hola
+
+Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
+
+You can manage your new MongoDB by also embedding rockmongo-1.1
+The rockmongo username and password will be the same as the MongoDB credentials above.
