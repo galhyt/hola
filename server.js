@@ -109,7 +109,7 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             console.log('-------------------')
             console.log(process.env)
-            db.test.insert({hi: "how"})
+            db.collection('test', function(table){table.insert({hi:"ho"})})
             res.send(self.cache_get('index.html') );
         };
     };
