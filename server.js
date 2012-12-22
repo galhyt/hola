@@ -2,7 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
-var db = require('mongoskin').db('admin:6L8YHvCi86GC@127.12.75.1:27017/hola');
+var db = require('mongoskin').db('admin:6L8YHvCi86GC@localhost:27017/hola');
 
 /**
  *  Define the sample application.
