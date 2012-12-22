@@ -27,7 +27,8 @@
   "dependencies": {
 		"express":"*",
 		"mongodb":"*",
-		"mongoskin":"*"
+		"mongoskin":"*",
+		"mu2":"*"
   },
   "devDependencies": {},
   "bundleDependencies": [],
