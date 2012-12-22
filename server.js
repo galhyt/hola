@@ -123,8 +123,7 @@ res.setHeader('Content-Type', 'text/json');
             res.setHeader('Content-Type', 'text/html');
             console.log('-------------------')
             //~ console.log(process.env)
-            db.collection('test').insert({hi:"ho"});
-				
+			
 			 var stream = mu.compileAndRender('index.html', {name: "john"});
 			util.pump(stream, res);
             //~ res.send(self.cache_get('index.html') );
