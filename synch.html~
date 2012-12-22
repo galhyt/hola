@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#start").click(function() {
+		$("#start").attr("disabled","disabled");
+		doAjax();	
+	});
+});
+
+var i = 0;
+function doAjax() {
+	if (i > 100) return;
+	$.ajax({
+		type: "GET",
+		async : false,
+                url: "http://localhost:8080/is_connected/"+i,
+                datatype: 'jsonp',
+		error: function(status) {
+			var mashehu;		
+		},
+                success: function(data) {
+                    var jsonData = JSON.parse(data);
+                    $("#result").append("<div>user "+jsonData.user+" is "+ (jsonData.status ? "connected" : "not connected") + "</div>");
+		    i++;
+		    setTimeout(function(){doAjax();},0);
+                }
+        });
+}
+</script>
+</head>
+<body>
+<input type="button" value="Start" id="start" />
+<div id="result"></div>
+</body>
+</html>
